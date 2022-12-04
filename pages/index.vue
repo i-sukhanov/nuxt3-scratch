@@ -32,3 +32,11 @@ const paginate = (pageNum: number) => {
   refresh();
 };
 </script>
+
+<style scoped>
+.users--list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+</style>
