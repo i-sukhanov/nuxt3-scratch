@@ -1,9 +1,9 @@
 <template>
-  <div></div>
+  <NuxtPage />
 </template>
 
-<script>
+<script lang="ts">
 export default {
-  setup() {},
+  name: 'App',
 };
 </script>
