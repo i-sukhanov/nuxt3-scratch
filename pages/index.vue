@@ -13,19 +13,17 @@
 </template>
 
 <script setup lang="ts">
-import { TUserRequest } from '~~/types/user';
+import { TUsersRequest } from '~~/types/user';
 
 const config = useAppConfig();
 const page = useState('page', () => 1);
 
-const { data: usersInfo, refresh } = await useFetch<TUserRequest>(
+const { data: usersInfo, refresh } = await useFetch<TUsersRequest>(
   () => `users?page=${page.value}`,
   {
     baseURL: config.API_URL,
   }
 );
-
-console.log(usersInfo.value);
 
 const paginate = (pageNum: number) => {
   page.value = pageNum;

@@ -6,10 +6,18 @@ export type TUserCollectionItem = {
   avatar: string;
 };
 
-export type TUserRequest = {
+export type TUsersRequest = {
   page: number;
   per_page: number;
   total: number;
   total_pages: number;
   data: TUserCollectionItem[];
+};
+
+export type TUserRequest = {
+  data: TUserCollectionItem;
+  support: {
+    url: string;
+    text: string;
+  };
 };

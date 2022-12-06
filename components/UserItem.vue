@@ -1,14 +1,13 @@
 <template>
-  <div class="user">
+  <nuxt-link class="user" :to="`/users/${user.id}`">
     <div
       class="user--avatar"
       :style="{ backgroundImage: `url(${user.avatar})` }"
     ></div>
     <div class="user--info">
       <div class="user--name">{{ user.first_name }} {{ user.last_name }}</div>
-      <div class="user--email">{{ user.email }}</div>
     </div>
-  </div>
+  </nuxt-link>
 </template>
 
 <script lang="ts" setup>
@@ -26,6 +25,9 @@ defineProps({
 <style scoped>
 .user {
   display: flex;
+  text-decoration: none;
+  color: #121212;
+  align-items: center;
 }
 
 .user--avatar {
@@ -35,5 +37,6 @@ defineProps({
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  margin-right: 16px;
 }
 </style>
